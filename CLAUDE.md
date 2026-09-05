@@ -126,7 +126,7 @@ See `tests/CLAUDE.md` for what each test suite covers and how to regenerate gold
 - **Hostile input**: the dev server binds localhost and serves a request path by decoding and resolving it — no traversal audit, no malformed-escape handling (`/%ZZ` throws into a 500). The one containment check in `resolveStaticFile()` is there because clean-URL candidates are built by string concatenation, not as a security boundary. Nothing here is a production server.
 - **Runtime config validation**: TypeScript catches misconfigs; no runtime re-validation.
 - **User extensibility**: no plugin API, no hook system. Last worked at commit `d5c82ff`, the parent of the commit that removed it (`e5cc3c9`).
-- **Backwards compatibility**: package is unpublished; breaking changes land freely.
+- **Backwards compatibility**: personal hobby project, not a public commitment; breaking changes land freely regardless of publish status.
 - **Dead island elimination**: every `*.island.{jsx,tsx}` under `components/` compiles and writes a client bundle to `dist/islands/`, whether or not a page imports it. Per-page `usedIslands` gating decides what the HTML _references_, not what ships. Pruning would mean deferring compilation until after pages render, but SSR modules have to be loaded before that — not worth the inversion.
 
 **Day-to-day DX** is the named exception. These subsystems cost lines on purpose and survive brevity passes:
