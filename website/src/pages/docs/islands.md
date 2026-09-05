@@ -58,9 +58,9 @@ Hydrates immediately when the element mounts. For above-the-fold UI where intera
 
 Island props cross a real boundary: they're serialized with `JSON.stringify` at build time and read back with `JSON.parse` in the browser. Nothing validates that trip in either direction.
 
-Stick to JSON primitives — strings, numbers, booleans, plain objects and arrays. Anything else is either coerced (a `Date` arrives as a string) or silently dropped (`undefined`, functions), and the server-rendered HTML won't match what the client hydrates with. `JSON.stringify` outright rejecting a value (a circular reference, a `BigInt`) is the one case Castro catches for you, at build time.
+Stick to JSON primitives — strings, numbers, booleans, plain objects and arrays. Anything else is either coerced (a `Date` arrives as a string) or silently dropped (`undefined`, functions), and the server-rendered HTML won't match what the client hydrates with.
 
-Islands also can't take children — including string children, which would survive the props round-trip anyway. Pass everything as props.
+Islands also can't take children — including string children. Pass everything as props.
 
 <div class="docs-nav">
   <a href="/docs/quick-start" role="button" class="docs-nav-back">← Back to Quick Start</a>
