@@ -29,7 +29,7 @@ export function PageShell({ title, description, activePath, children }: PageShel
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
-          href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;700&family=Bebas+Neue&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
           rel="stylesheet"
         />
       </head>

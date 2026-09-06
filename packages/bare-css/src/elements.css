@@ -20,8 +20,9 @@ button,
   background-color: transparent;
   color: var(--contrast);
   font-family: inherit;
-  font-size: var(--text-lg);
+  font-size: var(--text-base);
   font-weight: 600;
+  letter-spacing: -0.01em;
   line-height: var(--line-height);
   text-align: center;
   text-decoration: none;

@@ -14,7 +14,7 @@
 
 :root {
   /* ─── GLOBAL SYSTEM SETTINGS ─── */
-  --font-family: "Barlow", -apple-system, sans-serif;
+  --font-family: -apple-system, "Segoe UI", sans-serif;
   --font-display: "Bebas Neue", sans-serif;
 
   --border-radius: 0rem;

@@ -6,7 +6,7 @@ The Castro website uses a Soviet Constructivist aesthetic: unbleached paper, pro
 
 The visual system lives in the `@vktrz/bare-css` package (`packages/bare-css/src/`), pulled in via `import "@vktrz/bare-css/index.css"` in `PageShell`. The package is organized as:
 
-- **`tokens.css`** — the source of truth. Global settings (zero radius, no shadows/transitions, Bebas Neue + Barlow), the raw-material variables (`--ink-*`, `--canvas-*`, `--color-*` — what colors physically are), the spacing/type/border scales, and the theme role variables (`--primary`, `--background-color`, etc.) mapped separately for light and dark.
+- **`tokens.css`** — the source of truth. Global settings (zero radius, no shadows/transitions, Bebas Neue display font + system sans body font), the raw-material variables (`--ink-*`, `--canvas-*`, `--color-*` — what colors physically are), the spacing/type/border scales, and the theme role variables (`--primary`, `--background-color`, etc.) mapped separately for light and dark.
 - **`reset.css`** — box model, root text defaults, focus outline, `hr`.
 - **`typography.css`** — bare headings/prose/lists/links/code, including the heading size scale and `md` breakpoint bump.
 - **`elements.css`** — pre-styled `button` (bare = the neutral bordered look; `.primary` fills it), `.btn-square` icon buttons, `.divider`, tables.
@@ -63,7 +63,7 @@ Pigments:
 
 **Display** (`var(--font-display)`, Bebas Neue): headings, uppercase labels, the brand mark. Global `letter-spacing: 0.05em` is applied in `@vktrz/bare-css` to all heading elements. Don't remove it.
 
-**Body** (Barlow, `font-weight: 500`): set via `--font-family` and `--font-weight`. Default for all other text.
+**Body** (system sans-serif stack, `font-weight: 500`): set via `--font-family` and `--font-weight`. Default for all other text.
 
 **Font sizes**: Use `var(--text-xs)` through `var(--text-4xl)` for `font-size` declarations. Raw rem values belong in `@vktrz/bare-css` only, where the scale is defined.
 
