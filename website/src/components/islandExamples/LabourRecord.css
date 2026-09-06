@@ -1,0 +1,47 @@
+.labour-record {
+  border: var(--border-2);
+  border-top-width: 6px;
+  border-top-color: var(--primary);
+  background-color: var(--background-color);
+  /* Holds the box at its hydrated height so the card doesn't grow under the
+     reader mid-scroll — which is exactly when `comrade:visible` fires. */
+  min-height: 15rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.labour-record-header {
+  padding: var(--spacing-xs) var(--spacing);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-xs);
+  border-bottom: var(--border-2);
+  font-family: var(--font-family-monospace);
+  font-size: var(--text-sm);
+}
+
+.labour-record-status {
+  margin: var(--spacing-xl) var(--spacing) 0;
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--muted-color);
+}
+
+.labour-record-status-active {
+  color: var(--primary);
+}
+
+.labour-record-stamp {
+  margin: var(--spacing-2xs) var(--spacing) 0;
+  font-size: var(--text-sm);
+  color: var(--muted-color);
+}
+
+.labour-record button {
+  /* Pushed to the bottom edge so the button lands in the same place whether
+     the card is at its min-height or taller. */
+  margin: auto var(--spacing) var(--spacing);
+}

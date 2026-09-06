@@ -14,12 +14,9 @@ export function Hero() {
 
         <hr class="hero-hr" />
 
-        <h2>A Static Site Generator Built to Be Read</h2>
-        <p class="hero-subtitle">
-          Preact islands, JSX, and Bun. Small enough to read in an afternoon, serious enough to
-          build this website.
-        </p>
-        <p class="hero-quote">The satire is optional. The code is serious.</p>
+        <h2>A Five-Year Plan to Understand One's Own Framework</h2>
+        <p class="hero-subtitle">Bun, Preact. ~1350 lines. Possibly overplanned.</p>
+        <p class="hero-quote">The satire is optional. The code compiles.</p>
         <CTAButtons />
       </div>
     </div>

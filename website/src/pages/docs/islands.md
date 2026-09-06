@@ -9,14 +9,11 @@ path: /docs/islands
 
 Every component in Castro starts as static HTML. Islands are how you add interactivity for the parts that actually need it.
 
-|                      | JS shipped                 | When to use                                   |
-| -------------------- | -------------------------- | --------------------------------------------- |
-| **Static component** | 0 bytes                    | Anything that doesn't need the DOM at runtime |
-| **Island**           | Your code + Preact runtime | Reactive state, complex UI                    |
-
 ## THE HYDRATION LINE
 
-Name a file `*.island.tsx` under `components/` and Castro treats it differently: server-rendered to static HTML at build time, then hydrated in the browser — attaching to that same HTML rather than replacing it. Islands are only discovered under `components/`; the same file elsewhere is a plain import and fails with `ISLAND_NOT_FOUND` at build time. You control exactly **when** hydration happens with a directive.
+Name a file `*.island.tsx` under `components/` and Castro treats it differently: server-rendered to static HTML at build time, then hydrated in the browser — attaching to that same HTML rather than replacing it.
+
+Islands are only discovered under `components/`. You control **when** hydration happens with a directive.
 
 ```tsx
 // components/Counter.island.tsx
@@ -42,7 +39,7 @@ export default function Home() {
 
 Three directives control when an island's JavaScript is fetched and hydrated. Pick one — carrying two on the same island is a build error.
 
-### `comrade:visible` — the default
+### `comrade:visible` — default
 
 Hydrates when the element is within 100px of entering the viewport. Right for most islands: JavaScript loads only once the user actually reaches the component.
 

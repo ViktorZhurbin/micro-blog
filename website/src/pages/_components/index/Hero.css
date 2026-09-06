@@ -17,14 +17,14 @@
   align-items: center;
 
   svg {
-    width: 6rem;
-    height: 6rem;
-    margin-bottom: var(--spacing-2xl);
+    width: 5rem;
+    height: 5rem;
+    margin-bottom: var(--spacing-xl);
     color: var(--primary);
 
     @media (min-width: 768px) {
-      width: 8rem;
-      height: 8rem;
+      width: 6rem;
+      height: 6rem;
     }
   }
 
@@ -37,7 +37,7 @@
   border: 0;
   border-top: var(--border-primary-8);
   width: 8rem;
-  margin: var(--spacing-2-5xl) auto;
+  margin: var(--spacing-xl) auto;
 }
 
 .hero-subtitle {
@@ -50,7 +50,7 @@
 .hero-quote {
   position: relative;
   font-style: italic;
-  margin-bottom: var(--spacing-2-5xl);
+  margin-bottom: var(--spacing-2xl);
   font-size: var(--text-lg);
 
   &::before {

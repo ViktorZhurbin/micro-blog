@@ -27,6 +27,13 @@ export default function FiveYearPlan(props: { className?: string }) {
         ? { text: "SATISFACTORY TOIL", style: "badge-secondary" }
         : null;
 
+  // The badge row is always rendered, invisible when there's no badge yet —
+  // otherwise its appearance at 25% adds a row height that shifts the card
+  // below it. Placeholder text matches the real badges' length (17 chars)
+  // so the reserved width is right from the first render too.
+  const badgeText = badge?.text ?? "SATISFACTORY TOIL";
+  const badgeStyle = badge?.style ?? "badge-empty";
+
   // Clear the fulfillment flash after a short delay.
   useEffect(() => {
     if (!fulfilled) return;
@@ -63,11 +70,12 @@ export default function FiveYearPlan(props: { className?: string }) {
       {/* Content */}
       <div class="five-year-plan-content">
         <div class="five-year-plan-readout">
-          <div>
-            <h3>TRACTOR OUTPUT</h3>
-            <h3>{progress.toString().padStart(3, " ")}%</h3>
-          </div>
-          {badge && <div class={`badge ${badge.style}`}>{badge.text}</div>}
+          <h3>TRACTOR OUTPUT</h3>
+          <h3>{progress.toString().padStart(3, " ")}%</h3>
+        </div>
+
+        <div class="five-year-plan-badge-row">
+          <div class={`badge ${badgeStyle}`}>{badgeText}</div>
         </div>
 
         <progress value={progress} max="100" />

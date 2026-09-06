@@ -1,0 +1,45 @@
+.directives {
+  margin: var(--spacing-2xl) 0 0;
+  display: grid;
+  /* Wide enough that the three name/prose pairs read as separate blocks and
+     not as one paragraph broken up by code chips. */
+  gap: var(--spacing-xl);
+
+  > div {
+    display: grid;
+    gap: var(--spacing-xs);
+    justify-items: start;
+  }
+
+  dt {
+    display: flex;
+    align-items: baseline;
+    gap: var(--spacing-xs);
+    font-size: var(--text-base);
+
+    code {
+      font-weight: 600;
+    }
+  }
+
+  dd {
+    margin: 0;
+    color: var(--muted-color);
+    line-height: 1.6;
+  }
+}
+
+.directives-default {
+  font-family: var(--font-display);
+  letter-spacing: 0.05em;
+  color: var(--muted-color);
+}
+
+.directives-aside {
+  display: block;
+  margin-top: var(--spacing-2xl);
+  padding-left: var(--spacing);
+  border-left: var(--border-2);
+  color: var(--muted-color);
+  font-size: var(--text-sm);
+}

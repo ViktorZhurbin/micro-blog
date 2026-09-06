@@ -30,24 +30,29 @@
 .five-year-plan-readout {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   gap: var(--spacing);
-
-  > div {
-    display: flex;
-    align-items: center;
-    gap: var(--spacing);
-  }
 
   h3 {
     margin: 0;
+    white-space: nowrap;
   }
+}
+
+.five-year-plan-badge-row {
+  display: flex;
+  justify-content: flex-end;
 }
 
 .five-year-plan-content progress {
   width: 100%;
   height: 1.5rem;
   border: var(--border-2);
+}
+
+/* Fits two lines of the longest fulfillment message so the button doesn't
+   grow taller than "WORK HARDER, COMRADE!" and shift the card. */
+.five-year-plan-content button.primary.full {
+  min-height: 4.75rem;
 }
 
 /* Primitives consumed only by this island (the global sheet stays lean). */
@@ -67,4 +72,10 @@
   background-color: var(--secondary);
   color: var(--secondary-inverse);
   border-color: var(--secondary);
+}
+
+.badge-empty {
+  visibility: hidden;
+  border-color: transparent;
+  background-color: transparent;
 }

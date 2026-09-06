@@ -4,7 +4,7 @@ The Castro website uses a Soviet Constructivist aesthetic: unbleached paper, pro
 
 ## CSS Architecture
 
-The visual system lives in the `@vktrz/bare-css` package (`packages/bare-css/src/`), pulled in via `import "@vktrz/bare-css/index.css"` in `PageShell` — castro bundles it into the page CSS. The package is organized as:
+The visual system lives in the `@vktrz/bare-css` package (`packages/bare-css/src/`), pulled in via `import "@vktrz/bare-css/index.css"` in `PageShell`. The package is organized as:
 
 - **`tokens.css`** — the source of truth. Global settings (zero radius, no shadows/transitions, Bebas Neue + Barlow), the raw-material variables (`--ink-*`, `--canvas-*`, `--color-*` — what colors physically are), the spacing/type/border scales, and the theme role variables (`--primary`, `--background-color`, etc.) mapped separately for light and dark.
 - **`reset.css`** — box model, root text defaults, focus outline, `hr`.
@@ -12,9 +12,9 @@ The visual system lives in the `@vktrz/bare-css` package (`packages/bare-css/src
 - **`elements.css`** — pre-styled `button` (bare = the neutral bordered look; `.primary` fills it), `.btn-square` icon buttons, `.divider`, tables.
 - **`layout.css`** — the responsive `.container`.
 
-The package styles bare tags directly (Pico-style): a plain `<button>` already looks designed; classes only add intent (`.primary`, `.full`) or a distinct shape (`.btn-square`). Anchors that should look like buttons take `role="button"`.
+The package styles bare tags directly (PicoCSS-style): a plain `<button>` already looks designed; classes only add intent (`.primary`, `.full`) or a distinct shape (`.btn-square`). Anchors that should look like buttons take `role="button"`.
 
-Each component and page has its own co-located CSS file consuming these tokens. No preprocessor — Castro bundles the package and all component CSS into each page's stylesheet. The package styles bare elements (low specificity); component classes always win.
+Each component and page has its own co-located CSS file consuming these tokens. Component classes always win.
 
 ## Color System
 
@@ -95,7 +95,7 @@ Cards typically combine `border: var(--border-2)` with a heavier directional bor
 
 **Breakpoints** (documented in `@vktrz/bare-css`):
 `sm` 576px / `md` 768px / `lg` 1024px / `xl` 1280px / `xxl` 1536px.
-The site uses `768px` for the main layout switches (hero, how-it-works list).
+The site uses `768px` for the main layout switches (hero, production-cycle list). `Section`'s `.section-body` caps the landing page's measure at 768px so every section shares one left edge.
 
 **Spacing**: Use `var(--spacing-*)` throughout. The scale runs from `--spacing-4xs` (0.1× base unit) to `--spacing-6xl` (6× base unit).
 
@@ -119,5 +119,7 @@ When building a new component or page section:
 - **Visual emphasis**: Reach for border weight and background color, not text color. `border-top: var(--border-primary-4)` on a section header reads stronger than making the heading crimson.
 - **Cards**: `border: var(--border-2)` + a heavy directional border side. Background: `var(--code-background-color)` (newsprint/slate) to lift from page surface.
 - **Labels and badges**: Use `var(--font-display)` + uppercase + `var(--text-xs)` or `var(--text-sm)`. See `.badge` in `website/src/components/islandExamples/PropagandaRadio.css`.
+- **Landing sections**: `Section` (`website/src/pages/_components/index/Section.tsx`) owns the measure, the vertical padding, and the title for every section on the landing page. Add a section by rendering one, not by writing another `section` + `.container` + title trio — the one-off widths it replaced made the text step in and out as the page scrolled. `raised` puts a section on `--code-background-color`; the page alternates it so neighbours separate without a rule.
 - **Dividers**: `border-top: var(--border-primary-4)` with a constrained `max-width` for decorative separators; `border-top: var(--border-4)` for structural ones.
+- **Asides**: A muted, smaller comment on the section above it, not a new list member — `border-left: var(--border-2)`, `color: var(--muted-color)`, `var(--text-sm)`. See `.directives-aside` in `MeansOfProduction.css`.
 - **Icons**: Match `color: currentColor` or `color: var(--primary)` depending on whether the icon is structural or decorative.

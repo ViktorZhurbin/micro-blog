@@ -1,8 +1,5 @@
 import "./CTAButtons.css";
-
-function cx(...classes: Array<string | null | undefined>) {
-  return classes.filter(Boolean).join(" ");
-}
+import { cx } from "@/helpers/css";
 
 export function CTAButtons(props: { className?: string }) {
   return (

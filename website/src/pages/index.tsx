@@ -1,11 +1,13 @@
+import { Demonstration } from "./_components/index/Demonstration";
 import { Hero } from "./_components/index/Hero";
-import { HowItWorks } from "./_components/index/HowItWorks";
-import { IslandShowcase } from "./_components/index/IslandShowcase";
+import { MeansOfProduction } from "./_components/index/MeansOfProduction";
+import { ProductionCycle } from "./_components/index/ProductionCycle";
+import { SmallEnoughToRead } from "./_components/index/SmallEnoughToRead";
 
 export const meta = {
   title: "Castro - The People's Framework",
   description:
-    "A static site generator built to be read. Preact islands, JSX, and Bun — small enough to hold in your head.",
+    "A static site generator built on Bun and Preact. JSX and Markdown go in, static HTML comes out. Interactive islands where you need them.",
 };
 
 export default function Home() {
@@ -13,9 +15,13 @@ export default function Home() {
     <>
       <Hero />
 
-      <HowItWorks />
+      <MeansOfProduction />
 
-      <IslandShowcase />
+      <ProductionCycle />
+
+      <Demonstration />
+
+      <SmallEnoughToRead />
     </>
   );
 }

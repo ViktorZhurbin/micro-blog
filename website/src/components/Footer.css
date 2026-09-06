@@ -4,6 +4,21 @@
   border-top: var(--border-primary-4);
 }
 
+/* ─── Slogan ─── */
+
+.footer-slogan {
+  margin-bottom: var(--spacing-xl);
+
+  p {
+    margin: 0;
+    font-size: var(--text-xl);
+    font-family: var(--font-display);
+    letter-spacing: 0.05em;
+    color: var(--primary);
+    text-transform: uppercase;
+  }
+}
+
 /* ─── Baseline ─── */
 
 .footer-baseline {
@@ -18,12 +33,9 @@
   }
 }
 
-.footer-slogan-small {
-  font-size: var(--text-xl);
-  font-family: var(--font-display);
-  letter-spacing: 0.05em;
-  color: var(--primary);
-  text-transform: uppercase;
+.footer-tagline {
+  font-size: var(--text-sm);
+  color: var(--muted-color);
 }
 
 .footer-meta {
